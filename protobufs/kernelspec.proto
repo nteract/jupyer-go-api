@@ -1,0 +1,8 @@
+syntax = "proto3"
+package JupyterGoAPI;
+
+message Kernelspec {
+    required string display_name = 1;
+    required repeated string argv = 2;
+    required string language = 3;
+}
