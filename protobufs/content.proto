@@ -1,0 +1,25 @@
+syntax = "proto3"
+package JupyterGoAPI;
+
+message Content {
+    enum ContentType = {
+        directory = 1,
+        file = 2,
+        notebook = 3
+    }
+    enum Format {
+        text = 1;
+        base64 = 2;
+        json = 3;
+    }
+    required string name = 1;
+    required string path = 2;
+    required ContentType type = 3;
+    required bool writeable = 4;
+    required string created = 5;
+    required string last_modified = 6;
+    optional int32 size = 7;
+    required string mimetype = 8;
+    repeated string content = 9;
+    required Format format = 10; 
+}
